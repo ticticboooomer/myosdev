@@ -21,7 +21,7 @@ void *malloc(size_t size) {
   if (block == 0) {
     block = (mem_chunk*)(void*)&(mem_chunks_root.next);
   }
-  mem_chunk** head = block->next;
+  mem_chunk** head = &(block->next);
   while (block != 0) {
     if (block->freed && block->size >= size) {
       return block + sizeof(mem_chunk);
