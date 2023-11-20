@@ -13,8 +13,10 @@ extern void kernel_main(void) {
     str2[i] = 'B';
   }
   term_write(str2, 6);
+  free(str2);
+  term_write(str2, 6);
   term_write(str1, 5);
-  term_write("123456789012345", 15);
+  term_write(";", 1);
 
   for (;;){}
 }
