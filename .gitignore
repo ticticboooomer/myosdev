@@ -4,3 +4,4 @@ os1.iso
 *.o
 build/
 .cache/
+compile_commands.json
