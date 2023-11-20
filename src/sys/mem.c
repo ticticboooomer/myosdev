@@ -9,9 +9,6 @@ typedef struct mem_chunk {
 
 static mem_chunk mem_chunks_root = {0, FALSE, 0};
 
-/// if free-size < req-size then
-///   check if next block can be merged with current until
-///     group-size >= req-size
 
 void merge_chunks(mem_chunk *start, mem_chunk *end, size_t size) {
   start->next = end->next;
