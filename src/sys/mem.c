@@ -13,16 +13,16 @@ void *malloc(size_t size) {
   mem_chunk* start = &mem_chunks_root;
   while (start->next != 0) {
     if (start->freed == FALSE && start->size >= size) {
-      return ((char*)start) + sizeof(mem_chunk);
+      return (start) + sizeof(mem_chunk);
     }
     start = start->next;
   }
 
-  start->next = ((char*)start) + (start->size + sizeof(mem_chunk));
+  start->next = start + (start->size + sizeof(mem_chunk));
   start = start->next;
   start->size = size;
 
-  return ((char*)start) + sizeof(mem_chunk);
+  return (start) + sizeof(mem_chunk);
 }
 
 
