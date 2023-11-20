@@ -1,14 +1,20 @@
 [
 {
-  "directory": "/home/tic/dev/os/build",
-  "command": "/usr/bin/cc   -m32 -ffreestanding -nostdinc -fno-builtin -nostdlib -nodefaultlibs -o CMakeFiles/kernel.bin.dir/src/kentry.c.obj -c /home/tic/dev/os/src/kentry.c",
-  "file": "/home/tic/dev/os/src/kentry.c",
+  "directory": "/home/tic/os/build",
+  "command": "/usr/bin/cc   -m32 -ffreestanding -nostdinc -fno-builtin -nostdlib -nodefaultlibs -o CMakeFiles/kernel.bin.dir/src/kentry.c.obj -c /home/tic/os/src/kentry.c",
+  "file": "/home/tic/os/src/kentry.c",
   "output": "CMakeFiles/kernel.bin.dir/src/kentry.c.obj"
 },
 {
-  "directory": "/home/tic/dev/os/build",
-  "command": "/usr/bin/cc   -m32 -ffreestanding -nostdinc -fno-builtin -nostdlib -nodefaultlibs -o CMakeFiles/kernel.bin.dir/src/sys/mem.c.obj -c /home/tic/dev/os/src/sys/mem.c",
-  "file": "/home/tic/dev/os/src/sys/mem.c",
+  "directory": "/home/tic/os/build",
+  "command": "/usr/bin/cc   -m32 -ffreestanding -nostdinc -fno-builtin -nostdlib -nodefaultlibs -o CMakeFiles/kernel.bin.dir/src/sys/mem.c.obj -c /home/tic/os/src/sys/mem.c",
+  "file": "/home/tic/os/src/sys/mem.c",
   "output": "CMakeFiles/kernel.bin.dir/src/sys/mem.c.obj"
+},
+{
+  "directory": "/home/tic/os/build",
+  "command": "/usr/bin/cc   -m32 -ffreestanding -nostdinc -fno-builtin -nostdlib -nodefaultlibs -o CMakeFiles/kernel.bin.dir/src/sys/term.c.obj -c /home/tic/os/src/sys/term.c",
+  "file": "/home/tic/os/src/sys/term.c",
+  "output": "CMakeFiles/kernel.bin.dir/src/sys/term.c.obj"
 }
 ]
