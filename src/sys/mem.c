@@ -1,5 +1,5 @@
 #include "mem.h"
-#include "def.h"
+#include "types.h"
 
 typedef struct mem_chunk {
   size_t size;
@@ -12,7 +12,7 @@ static mem_chunk mem_chunks_root = {0, FALSE, 0};
 
 void merge_chunks(mem_chunk *start, mem_chunk *end, size_t size) {
   start->next = end->next;
-  memset((char *)(start + 1), size, (char)0);
+  kmemset((char *)(start + 1), size, (char)0);
 }
 
 Bool can_fit(mem_chunk *head, size_t size) {
@@ -41,7 +41,7 @@ void init_head(mem_chunk **prev, size_t size) {
   (*prev)->size = size;
 }
 
-void *malloc(size_t size) {
+void *kmalloc(size_t size) {
   mem_chunk *start = &mem_chunks_root;
   while (start->next != 0) {
     if (can_fit(start, size)) {
@@ -53,15 +53,15 @@ void *malloc(size_t size) {
   return (start) + 1;
 }
 
-void memset(char *start, size_t size, char ch) {
+void kmemset(char *start, size_t size, char ch) {
   for (size_t i = 0; i < size; i++) {
     start[i] = ch;
   }
 }
 
-void free(void *start) {
+void kfree(void *start) {
   mem_chunk *meta = (mem_chunk *)(((char *)start) - sizeof(mem_chunk));
   meta->freed = TRUE;
   char *strt = ((char *)start);
-  memset(strt, meta->size, (char)0);
+  kmemset(strt, meta->size, (char)0);
 }

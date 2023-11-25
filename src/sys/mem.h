@@ -1,7 +1,7 @@
 #pragma once
-#include "def.h"
+#include "types.h"
 
 
-void* malloc(size_t size);
-void memset(char* start, size_t size, char ch);
-void free(void* ptr);
+void* kmalloc(size_t size);
+void kmemset(char* start, size_t size, char ch);
+void kfree(void* ptr);

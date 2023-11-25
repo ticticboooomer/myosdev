@@ -1,6 +1,6 @@
 #pragma once
 
-#include "def.h"
+#include "types.h"
 
 enum vga_color {
   VGA_COLOR_BLACK = 0,

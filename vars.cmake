@@ -2,6 +2,9 @@ set(LIB_SRC_FILES
   "${CMAKE_SOURCE_DIR}/src/sys/mem.c"
   "${CMAKE_SOURCE_DIR}/src/sys/term.c"
   "${CMAKE_SOURCE_DIR}/src/boot.asm"
+  "${CMAKE_SOURCE_DIR}/src/sys/isr.asm"
+  "${CMAKE_SOURCE_DIR}/src/sys/abort.c"
+  "${CMAKE_SOURCE_DIR}/src/sys/intr.c"
 )
 
 set(CMAKE_ASM_NASM_OBJECT_FORMAT elf32)
