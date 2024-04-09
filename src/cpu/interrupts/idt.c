@@ -1,4 +1,4 @@
-#include "intr.h"
+#include "idt.h"
 #include "sys/term.h"
 
 __attribute__((aligned(0x10)))
@@ -25,7 +25,7 @@ extern void* isr_stub_table[];
 
 void idt_init() {
   idtr.base = (uint32_t)&idt[0];
-  idtr.limit = sizeof(idt_entry_t) * 32 - 1;
+  idtr.limit = (uint16_t)sizeof(idt_entry_t) * 256 - 1;
 
   for (uint8_t vector = 0; vector < 32; vector ++) {
     idt_set_descriptor(vector, isr_stub_table[vector], 0x8E);
