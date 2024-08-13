@@ -6,6 +6,7 @@ set(LIB_SRC_FILES
         "${CMAKE_SOURCE_DIR}/src/cpu/interrupts/idt.c"
         "${CMAKE_SOURCE_DIR}/src/cpu/interrupts/isr.asm"
         "${CMAKE_SOURCE_DIR}/src/cpu/gdt/gdt.c"
+        "${CMAKE_SOURCE_DIR}/src/cpu/gdt/gdt.asm"
 )
 
 set(CMAKE_ASM_NASM_OBJECT_FORMAT elf32)

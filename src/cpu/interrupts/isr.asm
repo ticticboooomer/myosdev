@@ -50,3 +50,9 @@ isr_stub_table:
   dd isr_stub_%+i
 %assign i i+1
 %endrep
+
+global _idt_load
+extern _idtr
+_idt_load:
+    lidt [_idtr]
+    ret
